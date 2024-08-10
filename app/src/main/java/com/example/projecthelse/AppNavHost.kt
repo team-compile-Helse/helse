@@ -24,6 +24,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.projecthelse.helpscreen.HelpHelseScreen
+import com.example.projecthelse.login.LoginScreen
 import com.example.projecthelse.login.SelectUserScreen
 import kotlinx.coroutines.delay
 
@@ -33,8 +35,16 @@ fun AppNavHost() {
     val navController = rememberNavController()
 
     NavHost(navController, startDestination = "greeting") {
-        composable("greeting") { GreetingScreen(navController) }
-        composable("selectUser") { SelectUserScreen(navController) }
-        //composable("helphelse") { HelpHelseScreen() }
+        composable("greeting") { GreetingScreen(navController) } // 첫화면
+        composable("selectUser") { SelectUserScreen(navController) } // 사용자 선택
+        composable("helphelse") { HelpHelseScreen(navController) } // 도움말
+        composable("login"){LoginScreen(navController)} // 로그인
+
     }
+
+    /*NavHost(navController, startDestination = "login"){
+        composable("login"){LoginScreen(navController)} // 로그인
+        // 아이디/비번찾기
+        // 간편로그인(카카오, 구글, 네이버)
+    }*/
 }
