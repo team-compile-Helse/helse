@@ -1,4 +1,4 @@
-package com.example.projecthelse.login
+package com.example.projecthelse.user.login
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
